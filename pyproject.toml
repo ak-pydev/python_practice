@@ -1,0 +1,24 @@
+[project]
+name = "learn-py"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "AadityaKhanal",email = "142284398+ak-codes-py@users.noreply.github.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pandas (>=2.2.3,<3.0.0)",
+    "jupyter (>=1.1.1,<2.0.0)",
+    "lab (>=8.4,<9.0)",
+    "numpy (>=2.2.4,<3.0.0)"
+]
+
+[tool.poetry]
+
+[tool.poetry.group.dev.dependencies]
+numpy = "^2.2.4"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
