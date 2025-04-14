@@ -1,0 +1,20 @@
+2025-04-14 02:18:06-root-DEBUG-This is a debug message.
+2025-04-14 02:18:06-root-INFO-This is an info message.
+2025-04-14 02:18:06-root-WARNING-This is an warning message.
+2025-04-14 02:18:06-root-ERROR-This is an error message.
+2025-04-14 02:18:06-root-CRITICAL-This is an critical message.
+2025-04-14 02:18:06-root-DEBUG-Addition took place.
+2025-04-14 02:18:06-root-DEBUG-Addition op is taking place
+2025-04-14 02:18:06-module1-DEBUG-This is debug message for module1
+2025-04-14 02:18:06-module2-WARNING-This is a warning message for module 2
+2025-04-14 02:18:06-module2-ERROR-
+2025-04-14 02:18:06-Arthimetic App-DEBUG-Adding: 10+15 = 25
+2025-04-14 02:18:06-Arthimetic App-DEBUG-Adding: 10-20 = -10
+2025-04-14 02:18:06-Arthimetic App-DEBUG-Adding: 134*169 = 22646
+2025-04-14 02:18:06-Arthimetic App-DEBUG-Adding: 20/10 = 2.0
+2025-04-14 02:18:12-ipykernel.comm-ERROR-No such comm target registered: jupyter.widget.control
+2025-04-14 02:18:12-Comm-WARNING-No such comm: c979da55-f284-4fb6-9909-bb68910308d3
+2025-04-14 02:18:12-Comm-DEBUG-Current comms: []
+2025-04-14 02:22:32-module1-DEBUG-This is debug message for module1
+2025-04-14 02:22:32-module2-WARNING-This is a warning message for module 2
+2025-04-14 02:22:32-module2-ERROR-This is a error message for module 2
