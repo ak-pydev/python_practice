@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/311809451775507514/d293e8a66d8540fab863d24dcadd0444/artifacts
+end_time: 1749536656388
+entry_point_name: ''
+experiment_id: '311809451775507514'
+lifecycle_stage: active
+run_id: d293e8a66d8540fab863d24dcadd0444
+run_name: peaceful-elk-237
+run_uuid: d293e8a66d8540fab863d24dcadd0444
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749536656374
+status: 3
+tags: []
+user_id: aadityakhanal

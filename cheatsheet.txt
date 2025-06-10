@@ -1,0 +1,2 @@
+# conda create -n test_env python=3.10 anaconda -y (for mac)
+# conda create -p venv python==3.10 -y (for windows)
