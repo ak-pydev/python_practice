@@ -3,3 +3,4 @@
 /mlflow_basics/mlruns/
 mlflow_basics/mlartifacts/
 .DS_Store
+/mlflow_basics/anaconda_projects/
