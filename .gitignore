@@ -2,3 +2,4 @@
 /mlflow_basics/.ipynb_checkpoints/
 /mlflow_basics/mlruns/
 mlflow_basics/mlartifacts/
+.DS_Store
