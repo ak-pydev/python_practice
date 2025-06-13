@@ -78,10 +78,3 @@ python_practice/       # base folder
 
 ---
 
-## 💡 Usage Examples
-
-* **Quick EDA:** Open `notebooks/eda_demo.ipynb` and run all cells
-* **Train a model:** Check out `models/train_classifier.py`
-* **Deploy microservice:** Start `flask/app.py` and hit `/predict`
-* **Launch dashboard:** `streamlit setup/app.py` for real-time data viz
----
