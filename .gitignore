@@ -5,3 +5,4 @@ mlflow_basics/mlartifacts/
 .DS_Store
 /mlflow_basics/anaconda_projects/
 /machine-learning/ridgeLasso/Algerian_forest_fires_dataset.csv
+/machine-learning/Regression/height-weight.csv
