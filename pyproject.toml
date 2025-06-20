@@ -6,7 +6,7 @@ authors = [
     {name = "AadityaKhanal",email = "142284398+ak-codes-py@users.noreply.github.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.10"
 dependencies = [
     "pandas (>=2.2.3,<3.0.0)",
     "jupyter (>=1.1.1,<2.0.0)",

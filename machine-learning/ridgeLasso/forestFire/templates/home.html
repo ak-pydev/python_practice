@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algerian Forest Fire Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+    <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- Header Section -->
+        <div class="text-center mb-12">
+            <div class="flex items-center justify-center gap-4 mb-6">
+                <div class="p-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-full shadow-lg">
+                    <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h1 class="text-5xl font-bold text-gray-800 bg-gradient-to-r from-green-700 to-emerald-600 bg-clip-text text-transparent">
+                    Algerian Forest Fire Prediction
+                </h1>
+            </div>
+            <p class="text-xl text-gray-600 max-w-3xl my-6 mx-auto leading-relaxed">
+                Advanced fire weather index prediction system for Algerian forests using comprehensive meteorological data analysis
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Main Form Section -->
+            <div class="lg:col-span-2">
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl border border-white/20 overflow-hidden">
+                    <!-- Form Header -->
+                    <div class="bg-gradient-to-r from-green-600 to-emerald-600 px-8 py-6">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                            </svg>
+                            <div>
+                                <h2 class="text-2xl font-bold text-white">FWI Prediction Parameters</h2>
+                                <p class="text-green-100 mt-1">Enter meteorological and fire weather data below</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Content -->
+                    <div class="p-8">
+                        <form action="{{url_for('predict_datapoint')}}" method="POST" class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <!-- Temperature -->
+                                <div class="space-y-2">
+                                    <label class="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                                        <svg class="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v7a6 6 0 1012 0V6a4 4 0 00-4-4zM8 6a2 2 0 114 0v6.5a4 4 0 11-4 0V6z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Temperature (°C)
+                                    </label>
+                                    <input type="text" name="Temperature" placeholder="Enter temperature" required 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200 bg-white/80">
+                                </div>
+
+                                <!-- Relative Humidity -->
+                                <div class="space-y-2">
+                                    <label class="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                                        <svg class="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.05 3.636a1 1 0 010 1.414 7 7 0 000 9.9 1 1 0 11-1.414 1.414 9 9 0 010-12.728 1 1 0 011.414 0zm9.9 0a1 1 0 011.414 0 9 9 0 010 12.728 1 1 0 11-1.414-1.414 7 7 0 000-9.9 1 1 0 010-1.414zM7.879 6.464a1 1 0 010 1.414 3 3 0 000 4.243 1 1 0 11-1.415 1.415 5 5 0 010-7.071 1 1 0 011.415 0zm4.242 0a1 1 0 011.415 0 5 5 0 010 7.072 1 1 0 01-1.415-1.415 3 3 0 000-4.242 1 1 0 010-1.415zM10 9a1 1 0 011 1v.01a1 1 0 11-2 0V10a1 1 0 011-1z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Relative Humidity (%)
+                                    </label>
+                                    <input type="text" name="RH" placeholder="Enter relative humidity" required 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200 bg-white/80">
+                                </div>
+
+                                <!-- Wind Speed -->
+                                <div class="space-y-2">
+                                    <label class="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                                        <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"></path>
+                                        </svg>
+                                        Wind Speed (km/h)
+                                    </label>
+                                    <input type="text" name="Ws" placeholder="Enter wind speed" required 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200 bg-white/80">
+                                </div>
+
+                                <!-- Rain -->
+                                <div class="space-y-2">
+                                    <label class="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                                        <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.05 6.464A7 7 0 1018 10a1 1 0 11-2 0 5 5 0 10-9.9-1.05 1 1 0 01-1.05-1.486zM7 9a1 1 0 012 0v6a1 1 0 11-2 0V9zm4 0a1 1 0 012 0v6a1 1 0 11-2 0V9zm4 0a1 1 0 012 0v6a1 1 0 11-2 0V9z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Rain (mm)
+                                    </label>
+                                    <input type="text" name="Rain" placeholder="Enter rainfall amount" required 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200 bg-white/80">
+                                </div>
+
+                                <!-- FFMC -->
+                                <div class="space-y-2">
+                                    <label class="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                                        <svg class="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Fine Fuel Moisture Code
+                                    </label>
+                                    <input type="text" name="FFMC" placeholder="Enter FFMC value" required 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200 bg-white/80">
+                                </div>
+
+                                <!-- DMC -->
+                                <div class="space-y-2">
+                                    <label class="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                                        <svg class="w-4 h-4 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                                        </svg>
+                                        Duff Moisture Code
+                                    </label>
+                                    <input type="text" name="DMC" placeholder="Enter DMC value" required 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200 bg-white/80">
+                                </div>
+
+                                <!-- ISI -->
+                                <div class="space-y-2">
+                                    <label class="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                                        <svg class="w-4 h-4 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Initial Spread Index
+                                    </label>
+                                    <input type="text" name="ISI" placeholder="Enter ISI value" required 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200 bg-white/80">
+                                </div>
+
+                                <!-- Classes -->
+                                <div class="space-y-2">
+                                    <label class="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                                        <svg class="w-4 h-4 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        Classes
+                                    </label>
+                                    <input type="text" name="Classes" placeholder="Enter class value" required 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200 bg-white/80">
+                                </div>
+
+                                <!-- Region -->
+                                <div class="space-y-2">
+                                    <label class="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                                        <svg class="w-4 h-4 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        Region
+                                    </label>
+                                    <input type="text" name="Region" placeholder="Enter region code" required 
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200 bg-white/80">
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" 
+                                    class="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-4 px-8 rounded-lg text-lg shadow-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl flex items-center justify-center gap-3">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path>
+                                </svg>
+                                Predict Fire Risk
+                            </button>
+                        </form>
+                        <div class="mt-8 p-6 bg-gradient-to-r from-red-50 to-orange-50 border-l-4 border-red-500 rounded-lg shadow-lg">
+                            <h2 class="flex items-center gap-3 text-2xl font-bold text-red-700">
+                                <svg class="w-8 h-8 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path>
+                                </svg>
+                                Predicted Fire Risk: 
+                                <span class="text-3xl font-extrabold text-red-600 animate-pulse">{{ results }}</span>
+                            </h2>
+                        </div>                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Results Card -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl border border-white/20 overflow-hidden">
+                    <div class="bg-gradient-to-r from-orange-500 to-red-500 px-6 py-4">
+                        <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path>
+                            </svg>
+                            Prediction Result
+                        </h3>
+                    </div>
+                    <div class="p-6">
+                        {% if result %}
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-red-600 mb-3 animate-pulse-slow">{{result}}</div>
+                            <div class="text-sm text-gray-600 mb-4">Fire Weather Index</div>
+                            <div class="p-4 bg-red-50 rounded-lg border-l-4 border-red-500">
+                                <p class="text-sm text-red-800 flex items-center gap-2">
+                                    <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
+                                    </svg>
+                                    High fire risk detected. Take necessary precautions.
+                                </p>
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="text-center text-gray-500">
+                            <svg class="w-16 h-16 mx-auto mb-4 opacity-30" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path>
+                            </svg>
+                            <p class="text-lg">Enter parameters and click predict to see results</p>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Info Card -->
+                <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl border border-white/20 overflow-hidden">
+                    <div class="px-6 py-4 border-b border-gray-200">
+                        <h3 class="text-lg font-bold text-gray-800">About FWI Components</h3>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-4 text-sm">
+                            <div class="flex items-start gap-3">
+                                <div class="w-3 h-3 bg-green-500 rounded-full mt-1 flex-shrink-0"></div>
+                                <div>
+                                    <p class="font-semibold text-gray-800">FFMC</p>
+                                    <p class="text-gray-600">Fine Fuel Moisture Code - Surface litter moisture</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-3 h-3 bg-amber-500 rounded-full mt-1 flex-shrink-0"></div>
+                                <div>
+                                    <p class="font-semibold text-gray-800">DMC</p>
+                                    <p class="text-gray-600">Duff Moisture Code - Organic layer moisture</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="w-3 h-3 bg-orange-500 rounded-full mt-1 flex-shrink-0"></div>
+                                <div>
+                                    <p class="font-semibold text-gray-800">ISI</p>
+                                    <p class="text-gray-600">Initial Spread Index - Fire spread rate</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Status Card -->
+                <div class="bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl shadow-2xl text-white p-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                        </svg>
+                        <h3 class="text-xl font-bold">System Status</h3>
+                    </div>
+                    <p class="text-green-100">All systems operational</p>
+                    <p class="text-sm text-green-200 mt-2">Last updated: Real-time</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
