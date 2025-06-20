@@ -9,10 +9,10 @@ app = application
 
 # import ridge model and standard scaler pickle file
 try:
-    with open(r'C:\Users\Aaditya Khanal\OneDrive\Desktop\python_practice\machine-learning\ridgeLasso\ENDtoEND\models\ridge.pkl', 'rb') as f:
+    with open(r'C:\Users\Aaditya Khanal\OneDrive\Desktop\python_practice\machine-learning\ridgeLasso\forestFire\models\ridge.pkl', 'rb') as f:
         ridge_model = pickle.load(f)
     print("Pickle loaded successfully for ridge model !")
-    with open(r'C:\Users\Aaditya Khanal\OneDrive\Desktop\python_practice\machine-learning\ridgeLasso\ENDtoEND\models\scaler.pkl', 'rb') as f:
+    with open(r'C:\Users\Aaditya Khanal\OneDrive\Desktop\python_practice\machine-learning\ridgeLasso\forestFire\models\scaler.pkl', 'rb') as f:
         standard_scaler = pickle.load(f)
     print("Pickle loaded successfully for standard scaler !")
 
