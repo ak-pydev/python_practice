@@ -1,6 +1,6 @@
 # Data Science & MLOps Repository
 
-[![Python_Practice 🔬 Repository Contents]]
+## Python_Practice 🔬 Repository Contents
 
 ### Python Fundamentals
 
