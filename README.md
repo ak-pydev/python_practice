@@ -1,6 +1,6 @@
 # Data Science & MLOps Repository
 
-[![Py## 🔬 Repository Contents
+[![Python_Practice 🔬 Repository Contents
 
 ### Python Fundamentals
 
@@ -250,8 +250,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For questions or collaboration opportunities:
 
-- GitHub: [Your GitHub Profile](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/yourusername)
+- LinkedIn: [Your LinkedIn Profile]([https://linkedin.com/in/yourusername](https://www.linkedin.com/in/-khanalaaditya/))
 
 ---
 
