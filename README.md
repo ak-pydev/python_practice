@@ -27,7 +27,8 @@
 - **Supervised Learning**: Decision trees, random forests, SVMs, and ensemble methods
 - **Unsupervised Learning**: Clustering and dimensionality reduction (PCA)
 - **Model Optimization**: Hyperparameter tuning and regularization techniques (Ridge, Lasso)
-- **Deep Learning**: Neural network implementations and applicationsttps://img.shields.io/badge/Python-3.12+-blue.svg)](https://www.python.org/downloads/)
+- **Deep Learning**: Neural network implementations and applicationsttps
+  [![Python]://img.shields.io/badge/Python-3.12+-blue.svg)](https://www.python.org/downloads/)
   [![Poetry](https://img.shields.io/badge/Poetry-Dependency%20Management-blueviolet)](https://python-poetry.org/)
   [![MLflow](https://img.shields.io/badge/MLflow-Experiment%20Tracking-blue)](https://mlflow.org/)
   [![Flask](https://img.shields.io/badge/Flask-Web%20Framework-lightgrey)](https://flask.palletsprojects.com/)
