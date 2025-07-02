@@ -248,13 +248,6 @@ This repository is continuously updated with:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 📬 Contact
-
-For questions or collaboration opportunities:
-
-- LinkedIn: [Your LinkedIn Profile]([https://linkedin.com/in/yourusername](https://www.linkedin.com/in/-khanalaaditya/))
-
----
 
 ⭐ **Star this repository if you found it useful!** ⭐
 
