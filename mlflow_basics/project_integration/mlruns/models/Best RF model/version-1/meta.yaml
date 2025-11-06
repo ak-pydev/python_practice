@@ -1,0 +1,15 @@
+creation_timestamp: 1762412060643
+current_stage: None
+deployment_job_state: null
+description: ''
+last_updated_timestamp: 1762412060643
+model_id: m-7ebd494f13d94109a7038ffc74608aae
+name: Best RF model
+run_id: 2e52c2e7e84e42608bf1182da98e68fb
+run_link: ''
+source: models:/m-7ebd494f13d94109a7038ffc74608aae
+status: READY
+status_message: null
+storage_location: file:///mnt/c/Users/Aaditya%20Khanal/OneDrive/Desktop/python_practice/mlflow_basics/project_integration/mlruns/0/models/m-7ebd494f13d94109a7038ffc74608aae/artifacts
+user_id: null
+version: 1

@@ -16,6 +16,7 @@ scikit-learn = "^1.7.2"
 seaborn = "^0.13.2"
 matplotlib = "^3.10.7"
 plotly = "^6.4.0"
+mlflow = "^3.5.1"
 
 
 [build-system]
